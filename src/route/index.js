@@ -17,12 +17,7 @@ const routes= [
         name: 'HomePage',
         component : HomePage
     }, 
-    // {
-    //     path: '/nav', 
-    //     name: 'navbar',
-    //     component : navbar
-    // }, 
-    
+
 
 ]
 const router = new VueRouter({
