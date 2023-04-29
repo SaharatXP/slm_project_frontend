@@ -4,7 +4,7 @@
       <div class="col-4"></div>
       <div class="col-4">
         <b-card class="text-center mt-5">
-          <h1>เข้าสู่ระบบ</h1>
+          <h1>เข้าสู่ระบบ SLM</h1>
           <br />
           <div class="row">
             <b-form-input
