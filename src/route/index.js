@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import loginPage from '../views/LoginPage'
-import HomePage from '../views/HomePage'
+import loginPage from '../views/LoginPage.vue'
+import HomePage from '../views/HomePage.vue'
 // import navbar from '../components/navbar.vue'
 
 Vue.use(VueRouter)
