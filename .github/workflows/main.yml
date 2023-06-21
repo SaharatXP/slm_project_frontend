@@ -2,19 +2,19 @@ name: Build and deploy
 on:
   push:
     branches:
-      -  deploy-dev
+      - deploy-dev
 jobs:
   build:
     name: Build ⛏
     runs-on: macos-latest
-#     runs-on: ubuntu-latest
+    #     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@main
       - name: Set Node.js 16
         uses: actions/setup-node@v2
         with:
-          node-version: '16.15.1'
+          node-version: "16.15.1"
       # - name: Run install with yarn
       #   uses: borales/actions-yarn@v4
       #   with:
@@ -46,22 +46,22 @@ jobs:
     name: Deploy 🚀
     needs: build
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: Checkout repository
         uses: actions/checkout@main
       - name: Download artifact
         uses: actions/download-artifact@main
-        with: 
+        with:
           name: build
           path: dist
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
-        with: 
-          timeout_minutes : 3
-          max_attempts : 3
+        with:
+          timeout_minutes: 3
+          max_attempts: 3
           server: 203.146.252.149
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
-          local-dir: ./dist/
-          server-dir : /
+          local-dir: ./
+          server-dir: /
