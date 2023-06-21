@@ -44,7 +44,7 @@ jobs:
           path: build
   deploy:
     name: Deploy 🚀
-    needs: dist
+    needs: build
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout repository
@@ -52,7 +52,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@main
         with: 
-          name: dist
+          name: build
           path: dist
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
