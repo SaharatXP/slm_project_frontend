@@ -41,7 +41,7 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: build
-          path: build
+          path: dist
   deploy:
     name: Deploy 🚀
     needs: build
